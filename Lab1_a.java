@@ -50,7 +50,7 @@ public class Lab1_a {
     }
 }
 
-/*
+/* DESCRIPTION
 Checks if an 8- or 9-digit credit card number is valid using a variation of the Luhn algorithm. 
 First, it takes the input credit card number and separates out the last digit, which serves as the “check digit.” 
 The code then reverses the rest of the digits to process them in the required order. 
@@ -61,12 +61,10 @@ To determine if the card number is valid, it compares this new check digit with 
 If they match, the card is valid; if not, it’s flagged as potentially fraudulent.
 */
 
-/* 
+/* OUTPUT
 Enter the credit card number: 12345674
 Valid credit card number
-*/
 
-/*
 Enter the credit card number: 12345679
 Fraud credit card number
 */

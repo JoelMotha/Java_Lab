@@ -53,3 +53,18 @@ public class Lab2_a {
         findTopKFrequentNumbers(K);
     }
 }
+
+/* DESCRIPTION
+Identifies and prints the top K most frequently occurring numbers from an input array. 
+It first collects the frequency of each number using a HashMap, then sorts these entries based 
+on frequency (and value in case of ties). The program prompts the user for the array size, numbers, 
+and the value of K, ensuring K does not exceed the array length before displaying the results.
+*/
+
+/* OUTPUT
+Enter the size of the array: 15
+Enter 15 numbers:
+5 5 5 5 5 4 4 4 4 3 3 3 2 2 1
+Enter the value of K: 3
+Top 3 numbers with highest frequencies: 5 4 3
+*/

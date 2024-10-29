@@ -121,7 +121,7 @@ public class Lab1_b {
 }
 
 
-/*
+/* DESCRIPTION
 Implements an interactive game where users engage in battles based on character strengths in words. 
 The Lab1_b class features two battle methods: one for a single word and another for two separate words. 
 Each character contributes to a score based on predefined strength values for characters from the 
@@ -130,7 +130,7 @@ a two-word battle, or exiting the game. The program calculates scores and announ
 decides to exit, providing an engaging experience. 
 */
 
-/*
+/* OUTPUT
 Choose an option:
 1. Single-word battle (one word from each player)
 2. Two-word battle (two words from each player)
