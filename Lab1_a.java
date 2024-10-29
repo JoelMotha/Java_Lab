@@ -49,3 +49,12 @@ public class Lab1_a {
         validator.validate();
     }
 }
+
+//checks if an 8- or 9-digit credit card number is valid using a variation of the Luhn algorithm. 
+//First, it takes the input credit card number and separates out the last digit, which serves as the “check digit.” 
+//The code then reverses the rest of the digits to process them in the required order. 
+//It doubles every second digit in this reversed sequence; if doubling any digit results in a number greater than 9, 
+//it sums the individual digits of that result to keep everything as single digits. 
+//Next, it calculates the total sum of all processed digits and derives a new check digit from this sum. 
+//To determine if the card number is valid, it compares this new check digit with the original last digit of the input. 
+//If they match, the card is valid; if not, it’s flagged as potentially fraudulent.
