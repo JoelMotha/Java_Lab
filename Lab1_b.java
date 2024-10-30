@@ -84,7 +84,7 @@ public class Lab1_b {
             System.out.println("3. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();  
 
             if (choice == 1) {
                 System.out.print("Player 1, enter your word: ");
