@@ -1,4 +1,5 @@
 DESCRIPTION
+
 The code defines an abstract class Robber with methods for different robbing
 scenarios (RowHouses, RoundHouses, SquareHouse, MultiHouseBuilding). A
 concrete subclass JAVAProfessionalRobber implements these methods, using a
@@ -8,6 +9,7 @@ methods with various inputs, calculating and printing the maximum money that
 can be robbed from a set of houses or buildings.
 
 OUTPUT
+
 MScAI&ML
 I love MachineLearning
 RowHouses([1,2,3,0]) -> 4
