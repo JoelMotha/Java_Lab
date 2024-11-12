@@ -2,16 +2,21 @@ import java.util.Scanner;
 
 public class Lab1_b {
 
+    // Constructor (no specific initialization needed here)
     public Lab1_b() {}
 
     // Single-word battle where both players enter one word each
     public void singleWordBattle(String player1Word, String player2Word) {
+        // Calculate score for Player 1's word, using left-side character strengths
         int player1Score = calculateScore(player1Word, true);
+        // Calculate score for Player 2's word, using right-side character strengths
         int player2Score = calculateScore(player2Word, false);
 
+        // Display each player's score
         System.out.println("Player 1 score: " + player1Score);
         System.out.println("Player 2 score: " + player2Score);
 
+        // Determine the winner based on scores
         if (player1Score > player2Score) {
             System.out.println("Player 1 wins with word \"" + player1Word + "\"!");
         } else if (player2Score > player1Score) {
@@ -23,12 +28,16 @@ public class Lab1_b {
 
     // Two-word battle where both players enter two words each
     public void twoWordBattle(String player1Word1, String player1Word2, String player2Word1, String player2Word2) {
+        // Calculate combined score for Player 1's two words
         int player1Score = calculateScore(player1Word1, true) + calculateScore(player1Word2, true);
+        // Calculate combined score for Player 2's two words
         int player2Score = calculateScore(player2Word1, false) + calculateScore(player2Word2, false);
 
+        // Display each player's combined score
         System.out.println("Player 1 score: " + player1Score);
         System.out.println("Player 2 score: " + player2Score);
 
+        // Determine the winner based on combined scores
         if (player1Score > player2Score) {
             System.out.println("Player 1 wins with words \"" + player1Word1 + "\" and \"" + player1Word2 + "\"!");
         } else if (player2Score > player1Score) {
@@ -38,10 +47,12 @@ public class Lab1_b {
         }
     }
 
-    // Method to calculate the score based on character strengths
+    // Method to calculate the score for a word based on character strengths
     private int calculateScore(String word, boolean isLeftSide) {
-        int score = 0;
+        int score = 0; // Initialize score for the word
+        // Loop through each character in the word
         for (char c : word.toCharArray()) {
+            // Add score based on whether the word is for Player 1 (left-side) or Player 2 (right-side)
             if (isLeftSide) {
                 score += getLeftStrength(c);
             } else {
@@ -51,50 +62,54 @@ public class Lab1_b {
         return score;
     }
 
-    // Strength values for left-side characters
+    // Strength values for left-side characters (Player 1's strengths)
     private int getLeftStrength(char c) {
         switch (c) {
             case 'w': return 4;
             case 'p': return 3;
             case 'b': return 2;
             case 's': return 1;
-            default: return 0;
+            default: return 0; // No score for other characters
         }
     }
 
-    // Strength values for right-side characters
+    // Strength values for right-side characters (Player 2's strengths)
     private int getRightStrength(char c) {
         switch (c) {
             case 'm': return 4;
             case 'q': return 3;
             case 'd': return 2;
             case 'z': return 1;
-            default: return 0;
+            default: return 0; // No score for other characters
         }
     }
 
     public static void main(String[] args) {
-        Lab1_b game = new Lab1_b();
-        Scanner scanner = new Scanner(System.in);
+        Lab1_b game = new Lab1_b(); // Create a new instance of the game
+        Scanner scanner = new Scanner(System.in); // Initialize scanner for user input
 
+        // Main game loop
         while (true) {
             System.out.println("Choose an option:");
             System.out.println("1. Single-word battle (one word from each player)");
             System.out.println("2. Two-word battle (two words from each player)");
             System.out.println("3. Exit");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();  
+            int choice = scanner.nextInt(); // Read user's menu choice
+            scanner.nextLine();  // Consume the newline character
 
             if (choice == 1) {
+                // Single-word battle: prompt each player for their word
                 System.out.print("Player 1, enter your word: ");
                 String player1Word = scanner.nextLine();
 
                 System.out.print("Player 2, enter your word: ");
                 String player2Word = scanner.nextLine();
 
+                // Start the single-word battle
                 game.singleWordBattle(player1Word, player2Word);
             } else if (choice == 2) {
+                // Two-word battle: prompt each player for their two words
                 System.out.print("Player 1, enter your first word: ");
                 String player1Word1 = scanner.nextLine();
 
@@ -107,19 +122,20 @@ public class Lab1_b {
                 System.out.print("Player 2, enter your second word: ");
                 String player2Word2 = scanner.nextLine();
 
+                // Start the two-word battle
                 game.twoWordBattle(player1Word1, player1Word2, player2Word1, player2Word2);
             } else if (choice == 3) {
+                // Exit the game
                 System.out.println("Exiting the game. Goodbye!");
                 break;
             } else {
-                System.out.println("Invalid choice. Please try again.");
+                System.out.println("Invalid choice. Please try again."); // Handle invalid choices
             }
         }
 
-        scanner.close();
+        scanner.close(); // Close the scanner when done
     }
 }
-
 
 /* DESCRIPTION
 Implements an interactive game where users engage in battles based on character strengths in words. 
