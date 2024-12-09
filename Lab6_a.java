@@ -78,3 +78,27 @@ public class Lab6_a {
         scanner.close();
     }
 }
+
+/* DESCRIPTION
+Calculates the number of ways to achieve a target sum using specified coin
+denominations. It prompts the user for input, including the number of coin
+types, their values, and the target sum. The program employs two recursive
+methods: one to count the total combinations and another to find and print
+all possible combinations of coins that sum to the target. It utilizes
+multithreading with an ExecutorService to run these tasks concurrently,
+ensuring efficient computation and output of results.
+*/
+
+/* OUTPUT
+Enter the number of coin denominations: 4
+Enter the coin denominations: 3
+1 2 3
+Enter the target sum: 4
+Possible combinations to make sum 4:
+[3, 1]
+[2, 2]
+[2, 1, 1]
+[1, 1, 1, 1]
+[1, 3]
+Number of ways to make sum 4: 5
+*/
