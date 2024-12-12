@@ -1,28 +1,23 @@
-// Abstract class defining the blueprint for a "Robber" with methods for various robbing scenarios.
 abstract class Robber {
-    // Concrete method to print "MScAI&ML"
     public void RobbingClass() {
         System.out.println("MScAI&ML");
     }
 
-    // Abstract methods for subclasses to implement different robbing scenarios.
     abstract int RowHouses(int[] money);
     abstract int RoundHouses(int[] money);
     abstract int SquareHouse(int[] money);
     abstract int MultiHouseBuilding(int[][] houses);
 
-    // Concrete method to print a message about Machine Learning.
     public void MachineLearning() {
         System.out.println("I love MachineLearning");
     }
 
-    // Helper method to calculate the maximum money that can be robbed without triggering alarms
-    // (cannot rob two adjacent houses in a row).
+    //cannot rob two adjacent houses in a row
     protected int robHelper(int[] money) {
-        if (money.length == 0) return 0;  // No houses to rob
+        if (money.length == 0) return 0;  
         int prev1 = 0, prev2 = 0;  // Initialize variables to track max money
         for (int m : money) {
-            int current = Math.max(prev1, prev2 + m);  // Decide whether to rob current house or skip
+            int current = Math.max(prev1, prev2 + m);  
             prev2 = prev1;
             prev1 = current;
         }
@@ -30,7 +25,7 @@ abstract class Robber {
     }
 }
 
-// Concrete subclass implementing specific robbing scenarios
+
 class Lab4 extends Robber {
     // Implement RowHouses: Calls robHelper for a simple row of houses
     @Override

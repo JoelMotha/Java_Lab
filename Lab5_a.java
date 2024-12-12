@@ -17,7 +17,7 @@ class BankA implements BankInterface {
 
     @Override
     public double getInterestRate() {
-        return 7.0;
+        return 7.0; 
     }
 }
 
